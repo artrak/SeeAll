@@ -1,0 +1,118 @@
+2017-04-19 10:23:28.6418|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 10:23:28.6578|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 10:23:28.6578|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 10:23:28.6578|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 10:23:28.6578|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 10:23:55.9743|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 10:23:56.6064|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 10:23:57.0804|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 12:37:58.4684|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 12:37:58.4844|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 12:37:58.4844|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 12:37:58.4844|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 12:37:58.4844|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 13:31:24.2707|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 13:31:24.2867|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 13:31:24.2867|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 13:31:24.2867|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 13:31:24.2867|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 13:32:21.2470|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 13:32:21.2630|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 13:32:21.2630|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 13:32:21.2630|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 13:32:21.2630|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 13:33:26.7697|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 13:33:26.7857|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 13:33:26.7857|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 13:33:26.7857|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 13:33:26.7857|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 14:20:07.0869|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 14:20:07.1029|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 14:20:07.1029|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 14:20:07.1029|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 14:20:07.1029|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 14:25:08.2401|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 14:25:08.2561|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 14:25:08.2561|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 14:25:08.2561|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 14:25:08.2561|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 14:25:50.6425|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 14:25:50.6595|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 14:25:50.6595|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 14:25:50.6595|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 14:25:50.6605|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 14:25:54.1677|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 14:25:54.1677|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 14:25:54.1677|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 14:25:54.1677|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 14:25:54.1677|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 14:26:04.1333|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 14:26:04.6893|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 14:26:05.2354|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 14:26:05.7244|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 14:26:06.2534|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 14:27:00.7405|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 14:27:00.7576|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 14:27:00.7576|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 14:27:00.7576|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 14:27:00.7576|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 14:27:54.6996|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 14:27:54.7156|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 14:27:54.7156|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 14:27:54.7156|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 14:27:54.7156|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 14:27:59.1169|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 14:27:59.1169|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 14:27:59.1169|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 14:27:59.1169|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 14:27:59.1169|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 14:28:17.8610|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 14:28:17.8770|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 14:28:17.8770|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 14:28:17.8770|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 14:28:17.8790|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 14:31:06.2986|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 14:31:06.3146|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 14:31:06.3146|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 14:31:06.3146|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 14:31:06.3146|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 15:32:00.5066|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 15:32:00.5226|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 15:32:00.5226|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 15:32:00.5226|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 15:32:00.5226|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 15:34:01.3775|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 15:34:01.3935|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 15:34:01.3935|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 15:34:01.3935|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 15:34:01.3935|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 15:34:28.0020|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 15:34:28.0180|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 15:34:28.0180|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 15:34:28.0180|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 15:34:28.0180|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 15:35:14.6207|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 15:35:14.6367|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 15:35:14.6367|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 15:35:14.6367|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 15:35:14.6367|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 15:35:59.1223|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 15:35:59.1403|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 15:35:59.1403|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 15:35:59.1403|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 15:35:59.1403|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 15:36:26.5208|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 15:36:26.5368|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 15:36:26.5368|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 15:36:26.5368|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 15:36:26.5368|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 15:36:37.9595|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 15:36:37.9815|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 15:36:37.9815|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 15:36:37.9815|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 15:36:37.9815|DEBUG|SeeAll.SettingsForm|TimeOut: 15
+2017-04-19 15:38:59.7406|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllKpcProkat;Integrated Security=True;
+2017-04-19 15:38:59.7566|DEBUG|SeeAll.SettingsForm|DataBase: seeAllKpcProkat
+2017-04-19 15:38:59.7566|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-04-19 15:38:59.7566|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-04-19 15:38:59.7566|DEBUG|SeeAll.SettingsForm|TimeOut: 15

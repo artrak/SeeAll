@@ -1,0 +1,1 @@
+2017-04-06 09:04:12.2957|TRACE|SeeAll.Form1|trace message‚‚‚‚‚‚‚‚‚

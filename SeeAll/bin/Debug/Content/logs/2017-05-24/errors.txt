@@ -1,0 +1,113 @@
+2017-05-24 09:53:38.2970|WARN|SeeAll.SettingsForm|
+2017-05-24 10:33:44.2926|ERROR|SeeAll.control.communication.LoadCpu|startByteAdr = 0
+2017-05-24 10:33:44.2926|ERROR|SeeAll.control.communication.LoadCpu| | year - 14
+2017-05-24 10:33:44.2926|ERROR|SeeAll.control.communication.LoadCpu| | month - 0
+2017-05-24 10:33:44.2946|ERROR|SeeAll.control.communication.LoadCpu| | day - 2017
+2017-05-24 10:33:44.2946|ERROR|SeeAll.control.communication.LoadCpu| | hour - 5
+2017-05-24 10:33:44.2946|ERROR|SeeAll.control.communication.LoadCpu| | minute - 24
+2017-05-24 10:33:44.2946|ERROR|SeeAll.control.communication.LoadCpu| | second - 7
+2017-05-24 13:52:41.6274|ERROR|SeeAll.control.communication.LoadCpu|startByteAdr = 0
+2017-05-24 13:52:41.6274|ERROR|SeeAll.control.communication.LoadCpu| | year - 36
+2017-05-24 13:52:41.6274|ERROR|SeeAll.control.communication.LoadCpu| | month - 58
+2017-05-24 13:52:41.6274|ERROR|SeeAll.control.communication.LoadCpu| | day - 2017
+2017-05-24 13:52:41.6274|ERROR|SeeAll.control.communication.LoadCpu| | hour - 5
+2017-05-24 13:52:41.6274|ERROR|SeeAll.control.communication.LoadCpu| | minute - 24
+2017-05-24 13:52:41.6274|ERROR|SeeAll.control.communication.LoadCpu| | second - 10
+2017-05-24 14:16:45.1580|ERROR|SeeAll.control.WorkCycleTable|The cast to value type 'System.Int64' failed because the materialized value is null. Either the result type's generic parameter or the query must use a nullable type.
+2017-05-24 14:17:45.2544|ERROR|SeeAll.control.WorkCycleTable|The cast to value type 'System.Int64' failed because the materialized value is null. Either the result type's generic parameter or the query must use a nullable type.
+2017-05-24 15:06:49.1768|ERROR|SeeAll.control.WorkCycleTable|The cast to value type 'System.Int64' failed because the materialized value is null. Either the result type's generic parameter or the query must use a nullable type.
+2017-05-24 15:07:40.6547|ERROR|SeeAll.control.WorkCycleTable|The cast to value type 'System.Int64' failed because the materialized value is null. Either the result type's generic parameter or the query must use a nullable type.
+2017-05-24 15:07:51.3013|ERROR|SeeAll.control.communication.LoadCpu|startByteAdr = 50
+2017-05-24 15:07:51.3013|ERROR|SeeAll.control.communication.LoadCpu| | year - 0
+2017-05-24 15:07:51.3013|ERROR|SeeAll.control.communication.LoadCpu| | month - 0
+2017-05-24 15:07:51.3013|ERROR|SeeAll.control.communication.LoadCpu| | day - 0
+2017-05-24 15:07:51.3013|ERROR|SeeAll.control.communication.LoadCpu| | hour - 0
+2017-05-24 15:07:51.3013|ERROR|SeeAll.control.communication.LoadCpu| | minute - 0
+2017-05-24 15:07:51.3013|ERROR|SeeAll.control.communication.LoadCpu| | second - 0
+2017-05-24 15:08:22.2351|ERROR|SeeAll.control.WorkCycleTable|The cast to value type 'System.Int64' failed because the materialized value is null. Either the result type's generic parameter or the query must use a nullable type.
+2017-05-24 15:08:57.5971|ERROR|SeeAll.control.communication.LoadCpu|startByteAdr = 50
+2017-05-24 15:08:57.5971|ERROR|SeeAll.control.communication.LoadCpu| | year - 0
+2017-05-24 15:08:57.5971|ERROR|SeeAll.control.communication.LoadCpu| | month - 0
+2017-05-24 15:08:57.5971|ERROR|SeeAll.control.communication.LoadCpu| | day - 0
+2017-05-24 15:08:57.5971|ERROR|SeeAll.control.communication.LoadCpu| | hour - 0
+2017-05-24 15:08:57.5971|ERROR|SeeAll.control.communication.LoadCpu| | minute - 0
+2017-05-24 15:08:57.5971|ERROR|SeeAll.control.communication.LoadCpu| | second - 0
+2017-05-24 15:09:33.8732|ERROR|SeeAll.control.communication.LoadCpu|startByteAdr = 50
+2017-05-24 15:09:33.8732|ERROR|SeeAll.control.communication.LoadCpu| | year - 0
+2017-05-24 15:09:33.8732|ERROR|SeeAll.control.communication.LoadCpu| | month - 0
+2017-05-24 15:09:33.8732|ERROR|SeeAll.control.communication.LoadCpu| | day - 0
+2017-05-24 15:09:33.8732|ERROR|SeeAll.control.communication.LoadCpu| | hour - 0
+2017-05-24 15:09:33.8732|ERROR|SeeAll.control.communication.LoadCpu| | minute - 0
+2017-05-24 15:09:33.8732|ERROR|SeeAll.control.communication.LoadCpu| | second - 0
+2017-05-24 15:10:33.1566|ERROR|SeeAll.control.communication.LoadCpu|startByteAdr = 50
+2017-05-24 15:10:33.1566|ERROR|SeeAll.control.communication.LoadCpu| | year - 0
+2017-05-24 15:10:33.1566|ERROR|SeeAll.control.communication.LoadCpu| | month - 0
+2017-05-24 15:10:33.1566|ERROR|SeeAll.control.communication.LoadCpu| | day - 0
+2017-05-24 15:10:33.1566|ERROR|SeeAll.control.communication.LoadCpu| | hour - 0
+2017-05-24 15:10:33.1566|ERROR|SeeAll.control.communication.LoadCpu| | minute - 0
+2017-05-24 15:10:33.1596|ERROR|SeeAll.control.communication.LoadCpu| | second - 0
+2017-05-24 15:11:19.6793|ERROR|SeeAll.control.communication.LoadCpu|startByteAdr = 50
+2017-05-24 15:11:19.6793|ERROR|SeeAll.control.communication.LoadCpu| | year - 0
+2017-05-24 15:11:19.6793|ERROR|SeeAll.control.communication.LoadCpu| | month - 0
+2017-05-24 15:11:19.6793|ERROR|SeeAll.control.communication.LoadCpu| | day - 0
+2017-05-24 15:11:19.6793|ERROR|SeeAll.control.communication.LoadCpu| | hour - 0
+2017-05-24 15:11:19.6793|ERROR|SeeAll.control.communication.LoadCpu| | minute - 0
+2017-05-24 15:11:19.6793|ERROR|SeeAll.control.communication.LoadCpu| | second - 0
+2017-05-24 15:12:05.3469|ERROR|SeeAll.control.communication.LoadCpu|startByteAdr = 50
+2017-05-24 15:12:05.3469|ERROR|SeeAll.control.communication.LoadCpu| | year - 0
+2017-05-24 15:12:05.3469|ERROR|SeeAll.control.communication.LoadCpu| | month - 0
+2017-05-24 15:12:05.3469|ERROR|SeeAll.control.communication.LoadCpu| | day - 0
+2017-05-24 15:12:05.3469|ERROR|SeeAll.control.communication.LoadCpu| | hour - 0
+2017-05-24 15:12:05.3469|ERROR|SeeAll.control.communication.LoadCpu| | minute - 0
+2017-05-24 15:12:05.3469|ERROR|SeeAll.control.communication.LoadCpu| | second - 0
+2017-05-24 15:14:15.5773|ERROR|SeeAll.control.communication.LoadCpu|startByteAdr = 50
+2017-05-24 15:14:15.5773|ERROR|SeeAll.control.communication.LoadCpu| | year - 0
+2017-05-24 15:14:15.5773|ERROR|SeeAll.control.communication.LoadCpu| | month - 0
+2017-05-24 15:14:15.5773|ERROR|SeeAll.control.communication.LoadCpu| | day - 0
+2017-05-24 15:14:15.5773|ERROR|SeeAll.control.communication.LoadCpu| | hour - 0
+2017-05-24 15:14:15.5773|ERROR|SeeAll.control.communication.LoadCpu| | minute - 0
+2017-05-24 15:14:15.5773|ERROR|SeeAll.control.communication.LoadCpu| | second - 0
+2017-05-24 15:15:12.1876|ERROR|SeeAll.control.communication.LoadCpu|startByteAdr = 50
+2017-05-24 15:15:12.1876|ERROR|SeeAll.control.communication.LoadCpu| | year - 0
+2017-05-24 15:15:12.1876|ERROR|SeeAll.control.communication.LoadCpu| | month - 0
+2017-05-24 15:15:12.1876|ERROR|SeeAll.control.communication.LoadCpu| | day - 0
+2017-05-24 15:15:12.1876|ERROR|SeeAll.control.communication.LoadCpu| | hour - 0
+2017-05-24 15:15:12.1876|ERROR|SeeAll.control.communication.LoadCpu| | minute - 0
+2017-05-24 15:15:12.1876|ERROR|SeeAll.control.communication.LoadCpu| | second - 0
+2017-05-24 15:15:33.0458|ERROR|SeeAll.control.communication.LoadCpu|startByteAdr = 50
+2017-05-24 15:15:33.0458|ERROR|SeeAll.control.communication.LoadCpu| | year - 0
+2017-05-24 15:15:33.0458|ERROR|SeeAll.control.communication.LoadCpu| | month - 0
+2017-05-24 15:15:33.0458|ERROR|SeeAll.control.communication.LoadCpu| | day - 0
+2017-05-24 15:15:33.0458|ERROR|SeeAll.control.communication.LoadCpu| | hour - 0
+2017-05-24 15:15:33.0458|ERROR|SeeAll.control.communication.LoadCpu| | minute - 0
+2017-05-24 15:15:33.0458|ERROR|SeeAll.control.communication.LoadCpu| | second - 0
+2017-05-24 15:25:44.8387|ERROR|SeeAll.control.communication.LoadCpu|{My coment} limitsCpu load with CPU - failure
+2017-05-24 15:26:45.3992|ERROR|SeeAll.control.communication.LoadCpu|startByteAdr = 22
+2017-05-24 15:26:45.3992|ERROR|SeeAll.control.communication.LoadCpu| | year - 2017
+2017-05-24 15:26:45.3992|ERROR|SeeAll.control.communication.LoadCpu| | month - 5
+2017-05-24 15:26:45.3992|ERROR|SeeAll.control.communication.LoadCpu| | day - 24
+2017-05-24 15:26:45.3992|ERROR|SeeAll.control.communication.LoadCpu| | hour - 12
+2017-05-24 15:26:45.3992|ERROR|SeeAll.control.communication.LoadCpu| | minute - 0
+2017-05-24 15:26:45.3992|ERROR|SeeAll.control.communication.LoadCpu| | second - 0
+2017-05-24 15:31:26.4513|WARN|SeeAll.control.communication.LoadCpu|Destination IP-Address '192.168.1.241' is not available!
+2017-05-24 15:37:22.1046|ERROR|SeeAll.control.communication.LoadCpu|{My coment} limitsCpu load with CPU - failure
+2017-05-24 15:37:30.9101|ERROR|SeeAll.control.communication.LoadCpu|startByteAdr = 51
+2017-05-24 15:37:30.9101|ERROR|SeeAll.control.communication.LoadCpu| | year - 0
+2017-05-24 15:37:30.9101|ERROR|SeeAll.control.communication.LoadCpu| | month - 0
+2017-05-24 15:37:30.9101|ERROR|SeeAll.control.communication.LoadCpu| | day - 0
+2017-05-24 15:37:30.9101|ERROR|SeeAll.control.communication.LoadCpu| | hour - 0
+2017-05-24 15:37:30.9101|ERROR|SeeAll.control.communication.LoadCpu| | minute - 0
+2017-05-24 15:37:30.9101|ERROR|SeeAll.control.communication.LoadCpu| | second - 0
+2017-05-24 15:55:03.9564|WARN|SeeAll.control.communication.LoadCpu|Destination IP-Address '192.168.1.241' is not available!
+2017-05-24 16:10:26.6333|WARN|SeeAll.SettingsForm|
+2017-05-24 16:10:27.8184|WARN|SeeAll.SettingsForm|
+2017-05-24 16:10:29.5245|WARN|SeeAll.SettingsForm|
+2017-05-24 16:10:31.5486|WARN|SeeAll.SettingsForm|
+2017-05-24 16:12:10.2053|ERROR|SeeAll.control.communication.LoadCpu|startByteAdr = 11
+2017-05-24 16:12:10.2053|ERROR|SeeAll.control.communication.LoadCpu| | year - 0
+2017-05-24 16:12:10.2053|ERROR|SeeAll.control.communication.LoadCpu| | month - 0
+2017-05-24 16:12:10.2053|ERROR|SeeAll.control.communication.LoadCpu| | day - 0
+2017-05-24 16:12:10.2053|ERROR|SeeAll.control.communication.LoadCpu| | hour - 0
+2017-05-24 16:12:10.2053|ERROR|SeeAll.control.communication.LoadCpu| | minute - 0
+2017-05-24 16:12:10.2053|ERROR|SeeAll.control.communication.LoadCpu| | second - 0
+2017-05-24 16:21:37.5147|WARN|SeeAll.SettingsForm|

@@ -1,0 +1,16 @@
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\bin\Release\UnitTestProject1.dll
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\bin\Release\UnitTestProject1.pdb
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\bin\Release\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\obj\Release\UnitTestProject1.dll
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\obj\Release\UnitTestProject1.pdb
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\obj\Release\UnitTestProject1.csprojResolveAssemblyReference.cache
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\bin\Release\NLog.config
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\bin\Release\SeeAll.exe
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\bin\Release\NLog.dll
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\bin\Release\S7.Net.dll
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\bin\Release\EntityFramework.dll
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\bin\Release\SeeAll.pdb
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\bin\Release\NLog.xml
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\bin\Release\S7.Net.xml
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\UnitTestProject1\bin\Release\EntityFramework.xml

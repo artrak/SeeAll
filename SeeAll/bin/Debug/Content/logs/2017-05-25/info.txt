@@ -1,0 +1,20 @@
+2017-05-25 10:18:57.6369|INFO|SeeAll.Form1|Start of the program
+2017-05-25 10:18:57.7299|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-25 10:18:57.7299|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-25 10:18:57.7299|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-25 10:50:49.1342|INFO|SeeAll.Form1|Start of the program
+2017-05-25 10:50:49.1792|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-25 10:50:49.1792|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-25 10:50:49.2012|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-25 10:51:20.3740|INFO|SeeAll.Form1|Start of the program
+2017-05-25 10:51:20.4330|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-25 10:51:20.4330|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-25 10:51:20.4330|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-25 10:51:45.2935|INFO|SeeAll.Form1|Start of the program
+2017-05-25 10:51:45.3495|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-25 10:51:45.3705|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-25 10:51:45.3495|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-25 10:52:15.4442|INFO|SeeAll.Form1|Start of the program
+2017-05-25 10:52:15.4902|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-25 10:52:15.4902|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-25 10:52:15.4902|INFO|SeeAll.Form1|Start Thread WorkCycleTable()

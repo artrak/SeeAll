@@ -1,0 +1,44 @@
+2017-04-06 09:00:33.7192|INFO|SeeAll.Form1|Start of the program
+2017-04-06 09:00:33.7982|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-04-06 09:00:33.7982|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-04-06 09:00:33.7982|INFO|SeeAll.Form1|Start Thread online start-window
+2017-04-06 09:01:38.2059|INFO|SeeAll.Form1|Start of the program
+2017-04-06 09:01:38.2799|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-04-06 09:01:38.2799|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-04-06 09:01:38.2799|INFO|SeeAll.Form1|Start Thread online start-window
+2017-04-06 09:01:58.2320|INFO|SeeAll.Form1|Start of the program
+2017-04-06 09:01:58.2910|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-04-06 09:01:58.2910|INFO|SeeAll.Form1|Start Thread online start-window
+2017-04-06 09:01:58.2910|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-04-06 09:03:07.4350|INFO|SeeAll.Form1|Start of the program
+2017-04-06 09:03:07.4770|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-04-06 09:03:07.4770|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-04-06 09:03:07.4770|INFO|SeeAll.Form1|Start Thread online start-window
+2017-04-06 09:04:09.5365|INFO|SeeAll.Form1|Start of the program
+2017-04-06 09:04:09.5755|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-04-06 09:04:09.5755|INFO|SeeAll.Form1|Start Thread online start-window
+2017-04-06 09:04:09.5755|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-04-06 09:05:10.0600|INFO|SeeAll.Form1|Start of the program
+2017-04-06 09:05:10.1020|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-04-06 09:05:10.1030|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-04-06 09:05:10.1030|INFO|SeeAll.Form1|Start Thread online start-window
+2017-04-06 09:12:56.3887|INFO|SeeAll.Form1|Start of the program
+2017-04-06 09:12:56.4487|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-04-06 09:12:56.4487|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-04-06 09:12:56.4687|INFO|SeeAll.Form1|Start Thread online start-window
+2017-04-06 12:34:48.6595|INFO|SeeAll.Form1|Start of the program
+2017-04-06 12:34:48.7205|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-04-06 12:34:48.7205|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-04-06 12:34:48.7205|INFO|SeeAll.Form1|Start Thread online start-window
+2017-04-06 12:36:19.7737|INFO|SeeAll.Form1|Start of the program
+2017-04-06 12:36:19.8317|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-04-06 12:36:19.8317|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-04-06 12:36:23.6289|INFO|SeeAll.Form1|Start Thread online start-window
+2017-04-06 12:47:57.8596|INFO|SeeAll.Form1|Start of the program
+2017-04-06 12:47:57.8986|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-04-06 12:47:57.8986|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-04-06 12:47:57.9066|INFO|SeeAll.Form1|Start Thread online start-window
+2017-04-06 12:48:32.8056|INFO|SeeAll.Form1|Start of the program
+2017-04-06 12:48:32.8456|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-04-06 12:48:32.8456|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-04-06 12:48:32.8456|INFO|SeeAll.Form1|Start Thread online start-window

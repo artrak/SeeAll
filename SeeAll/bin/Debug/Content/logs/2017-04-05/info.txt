@@ -1,0 +1,1 @@
+2017-04-05 14:33:29.4489|INFO|SeeAll.Form1|info message

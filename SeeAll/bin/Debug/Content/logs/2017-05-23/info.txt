@@ -1,0 +1,199 @@
+2017-05-23 13:17:14.3569|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:17:14.4389|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:17:14.4389|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:17:14.4389|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:17:14.4389|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:17:21.1113|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:17:21.1113|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:17:21.1113|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:17:21.1113|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:17:21.1113|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:17:21.8164|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:17:21.8164|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:17:21.8164|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:17:21.8164|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:17:21.8164|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:17:22.1794|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:17:22.1794|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:17:22.1794|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:17:22.1794|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:17:22.1794|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:17:25.7846|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:17:25.7846|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:17:25.7846|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:17:25.7846|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:17:25.7846|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:47:06.3294|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:47:06.3674|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:47:06.3674|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:47:06.3674|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:47:06.3674|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:47:14.1889|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:47:14.1889|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:47:14.1889|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:47:14.1889|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:47:14.1889|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:47:16.9260|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:47:16.9260|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:47:16.9260|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:47:16.9260|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:47:16.9260|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:47:19.4302|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:47:19.4302|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:47:19.4302|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:47:19.4302|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:47:19.4302|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:47:21.9463|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:47:21.9463|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:47:21.9463|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:47:21.9463|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:47:21.9463|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:48:50.1984|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:48:50.2404|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:48:50.2404|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:48:50.2404|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:48:50.2404|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:48:54.0436|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:48:54.0436|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:48:54.0436|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:48:54.0436|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:48:54.0436|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:48:57.3808|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:48:57.3808|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:48:57.3808|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:48:57.3808|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:48:57.3808|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:48:58.1818|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:48:58.1818|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:48:58.1818|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:48:58.1818|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:48:58.1818|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:49:01.2120|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:49:01.2120|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:49:01.2120|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:49:01.2120|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:49:01.2120|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:49:11.2966|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:49:11.2966|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:49:11.2966|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:49:11.2966|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:49:11.2966|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:49:11.8576|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:49:11.8576|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:49:11.8576|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:49:11.8576|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:49:11.8576|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:49:15.0468|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:49:15.0468|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:49:15.0468|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:49:15.0468|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:49:15.0468|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:49:20.8861|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:49:20.8861|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:49:20.8861|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:49:20.8861|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:49:20.8861|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:49:21.5592|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:49:21.5592|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:49:21.5602|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:49:21.5602|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:49:21.5602|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:49:26.3514|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:49:26.3514|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:49:26.3514|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:49:26.3514|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:49:26.3514|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:49:29.7306|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:49:29.7306|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:49:29.7306|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:49:29.7306|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:49:29.7306|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:49:34.3779|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:49:34.3779|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:49:34.3779|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:49:34.3779|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:49:34.3779|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:49:37.7081|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:49:37.7081|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:49:37.7081|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:49:37.7081|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:49:37.7081|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:49:41.8933|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:49:41.8933|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:49:41.8933|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:49:41.8933|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:49:41.8933|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:49:45.1345|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:49:45.1345|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:49:45.1345|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:49:45.1345|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:49:45.1345|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:52:50.0971|INFO|SeeAll.Form1|Start of the program
+2017-05-23 13:52:50.1611|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-23 13:52:50.1611|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-23 13:52:50.1891|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-23 13:53:31.5135|INFO|SeeAll.Form1|Start of the program
+2017-05-23 13:53:31.5535|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-23 13:53:31.5535|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-23 13:53:31.5755|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-23 13:53:48.8855|INFO|SeeAll.Form1|Start of the program
+2017-05-23 13:53:48.9525|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-23 13:53:48.9525|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-23 13:53:48.9745|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-23 13:54:24.0525|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:54:24.1025|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:54:24.1025|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:54:24.1025|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:54:24.1025|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:54:28.1097|INFO|SeeAll.Form1|Start of the program
+2017-05-23 13:54:28.1557|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-23 13:54:28.1557|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-23 13:54:28.1557|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-23 13:55:34.2915|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:55:35.3215|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:55:36.0136|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:55:36.6106|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:55:38.8597|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:56:09.3365|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 13:56:09.3725|INFO|SeeAll.SettingsForm|SAVE config --> 172.17.132.200
+2017-05-23 13:56:09.3725|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 13:56:09.3725|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 13:56:09.3725|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 13:56:12.5647|INFO|SeeAll.Form1|Start of the program
+2017-05-23 13:56:12.5927|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-23 13:56:12.5927|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-23 13:56:12.5927|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-23 17:08:41.1802|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 17:08:41.2172|INFO|SeeAll.SettingsForm|SAVE config --> 192.168.1.241
+2017-05-23 17:08:41.2172|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 17:08:41.2172|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 17:08:41.2172|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 17:09:05.5776|INFO|SeeAll.SettingsForm|SAVE config --> 4
+2017-05-23 17:09:05.6206|INFO|SeeAll.SettingsForm|SAVE config --> 192.168.1.241
+2017-05-23 17:09:05.6206|INFO|SeeAll.SettingsForm|SAVE config --> 0
+2017-05-23 17:09:05.6206|INFO|SeeAll.SettingsForm|SAVE config --> 1
+2017-05-23 17:09:05.6206|INFO|SeeAll.SettingsForm|SAVE config --> 1000
+2017-05-23 17:09:57.0676|INFO|SeeAll.Form1|Start of the program
+2017-05-23 17:09:57.1216|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-23 17:09:57.1216|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-23 17:09:57.1456|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-23 17:10:55.6539|INFO|SeeAll.Form1|Start of the program
+2017-05-23 17:10:55.6959|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-23 17:10:55.6959|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-23 17:10:55.6959|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-23 17:16:13.5481|INFO|SeeAll.Form1|Start of the program
+2017-05-23 17:16:13.6331|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-23 17:16:13.6331|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-23 17:16:13.6331|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-23 17:27:19.6402|INFO|SeeAll.Form1|Start of the program
+2017-05-23 17:27:19.7032|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-23 17:27:19.7032|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-23 17:27:19.7232|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-23 17:28:09.0630|INFO|SeeAll.Form1|Start of the program
+2017-05-23 17:28:09.1170|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-23 17:28:09.1170|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-23 17:28:09.1170|INFO|SeeAll.Form1|Start Thread online start-window
+2017-05-23 17:47:34.1046|INFO|SeeAll.Form1|Start of the program
+2017-05-23 17:47:34.1497|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-05-23 17:47:34.1497|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-05-23 17:47:34.1727|INFO|SeeAll.Form1|Start Thread online start-window

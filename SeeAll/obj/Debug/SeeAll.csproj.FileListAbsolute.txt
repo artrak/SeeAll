@@ -1,0 +1,39 @@
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\bin\Debug\SeeAll.exe.config
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\bin\Debug\SeeAll.exe
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\bin\Debug\SeeAll.pdb
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\bin\Debug\EntityFramework.dll
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\bin\Debug\EntityFramework.SqlServer.dll
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\bin\Debug\S7.Net.dll
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\bin\Debug\EntityFramework.xml
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\bin\Debug\EntityFramework.SqlServer.xml
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\bin\Debug\S7.Net.xml
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\obj\Debug\SeeAll.Properties.Resources.resources
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\obj\Debug\SeeAll.csproj.GenerateResource.Cache
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\obj\Debug\SeeAll.exe
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\obj\Debug\SeeAll.pdb
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\obj\Debug\SeeAll.Form1.resources
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\obj\Debug\SeeAll.SettingsForm.resources
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\bin\Debug\NLog.dll
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\bin\Debug\NLog.xml
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\bin\Debug\NLog.config
+D:\Artemius\Works_NTZ\GitHub\SeeAll_bitbucket\SeeAll\SeeAll\SeeAll\obj\Debug\SeeAll.csprojResolveAssemblyReference.cache
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\bin\Debug\NLog.config
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\bin\Debug\SeeAll.exe.config
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\bin\Debug\SeeAll.exe
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\bin\Debug\SeeAll.pdb
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\bin\Debug\EntityFramework.dll
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\bin\Debug\EntityFramework.SqlServer.dll
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\bin\Debug\NLog.dll
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\bin\Debug\S7.Net.dll
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\bin\Debug\EntityFramework.xml
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\bin\Debug\EntityFramework.SqlServer.xml
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\bin\Debug\NLog.xml
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\bin\Debug\S7.Net.xml
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\obj\Debug\SeeAll.Form1.resources
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\obj\Debug\SeeAll.Properties.Resources.resources
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\obj\Debug\SeeAll.SettingsForm.resources
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\obj\Debug\SeeAll.csproj.GenerateResource.Cache
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\obj\Debug\SeeAll.exe
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\obj\Debug\SeeAll.pdb
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\obj\Debug\SeeAll.csprojResolveAssemblyReference.cache
+D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\obj\Debug\SeeAll.csproj.CoreCompileInputs.cache

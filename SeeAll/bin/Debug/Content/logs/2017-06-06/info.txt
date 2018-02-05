@@ -1,0 +1,5 @@
+2017-06-06 14:03:11.9058|INFO|SeeAll.Form1|Start of the program
+2017-06-06 14:03:16.2281|INFO|SeeAll.Form1|Start Thread WorkCpu()
+2017-06-06 14:03:18.3152|INFO|SeeAll.Form1|Start Thread WorkCycleTable()
+2017-06-06 14:03:19.9463|INFO|SeeAll.Form1|Start Thread online start-window
+2017-06-06 14:03:26.9887|INFO|SeeAll.Form1|Start of the program

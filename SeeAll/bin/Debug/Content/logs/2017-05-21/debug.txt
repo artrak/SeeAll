@@ -1,0 +1,5 @@
+2017-05-21 08:56:30.5561|DEBUG|SeeAll.SettingsForm|ConnectionString: data source=DELL10445607\SQLEXPRESS;Initial Catalog=seeAllTest;Integrated Security=True;
+2017-05-21 08:56:30.6051|DEBUG|SeeAll.SettingsForm|DataBase: seeAllTest
+2017-05-21 08:56:30.6051|DEBUG|SeeAll.SettingsForm|DataSource: DELL10445607\SQLEXPRESS
+2017-05-21 08:56:30.6051|DEBUG|SeeAll.SettingsForm|ServerVersion: 09.00.5000
+2017-05-21 08:56:30.6071|DEBUG|SeeAll.SettingsForm|TimeOut: 15

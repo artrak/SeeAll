@@ -1,0 +1,81 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SeeAll.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CpuType" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="IpCpu" Type="System.String" Scope="User">
+      <Value Profile="(Default)">172.17.132.200</Value>
+    </Setting>
+    <Setting Name="RackCpu" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SlotCpu" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="LoadCpuExceptionTime" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100000</Value>
+    </Setting>
+    <Setting Name="DataBlockDatetime" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="DataBlockLimit" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="LogExceptionTime" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="SaveLog_1" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SaveLog_2" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SaveLog_3" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SmenaAstart" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="smenaAend" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="smenaBstart" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="smenaBend" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">23</Value>
+    </Setting>
+    <Setting Name="smenaVstart" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">23</Value>
+    </Setting>
+    <Setting Name="smenaVend" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="timerStandartCycle" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">60</Value>
+    </Setting>
+    <Setting Name="timerMicroDowntime" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">120</Value>
+    </Setting>
+    <Setting Name="timerException" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">60000</Value>
+    </Setting>
+    <Setting Name="startAutomaticallyCheckBox" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="startTimeWorkCycle" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">600000</Value>
+    </Setting>
+    <Setting Name="timerSqlException" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">60000</Value>
+    </Setting>
+    <Setting Name="shiftTransition" Type="System.String" Scope="User">
+      <Value Profile="(Default)">7,15,23</Value>
+    </Setting>
+    <Setting Name="timerWorkCycle" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5000</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

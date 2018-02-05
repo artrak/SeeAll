@@ -1,0 +1,14 @@
+2017-04-19 09:46:19.5463|WARN|SeeAll.SettingsForm|Destination IP-Address '172.17.132.200' is not available!
+2017-04-19 12:39:31.3867|ERROR|SeeAll.SettingsForm|CheckConnection() - false
+2017-04-19 13:34:11.2473|ERROR|SeeAll.SettingsForm|CheckConnection() - false
+2017-04-19 13:34:33.1115|ERROR|SeeAll.SettingsForm|CheckConnection() - false
+2017-04-19 14:20:22.1318|WARN|SeeAll.SettingsForm|Destination IP-Address '172.17.132.200' is not available!
+2017-04-19 14:29:44.7309|ERROR|SeeAll.SettingsForm|CheckConnection() - false
+2017-04-19 14:29:58.0687|WARN|SeeAll.SettingsForm|Destination IP-Address '172.17.132.200' is not available!
+2017-04-19 14:31:08.8287|WARN|SeeAll.SettingsForm|Destination IP-Address '172.17.132.200' is not available!
+2017-04-19 17:04:00.3763|WARN|SeeAll.control.communication.LoadCpu|Destination IP-Address '172.17.132.200' is not available!
+2017-04-19 17:05:44.8293|WARN|SeeAll.control.communication.LoadCpu|Destination IP-Address '172.17.132.200' is not available!
+2017-04-19 17:07:06.7410|WARN|SeeAll.control.communication.LoadCpu|Destination IP-Address '172.17.132.200' is not available!
+2017-04-19 17:09:09.4440|WARN|SeeAll.control.communication.LoadCpu|Destination IP-Address '172.17.132.200' is not available!
+2017-04-19 17:10:43.6044|WARN|SeeAll.control.communication.LoadCpu|Destination IP-Address '172.17.132.200' is not available!
+2017-04-19 17:10:54.7220|ERROR|SeeAll.control.WorkCycleTable|db.Database.Connection.State: db.Database.Connection.State
