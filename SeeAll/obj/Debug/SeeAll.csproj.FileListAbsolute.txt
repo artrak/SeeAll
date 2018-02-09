@@ -37,3 +37,6 @@ D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\obj\
 D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\obj\Debug\SeeAll.pdb
 D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\obj\Debug\SeeAll.csprojResolveAssemblyReference.cache
 D:\Artemius\Works_NTZ\Системы ВИДЕТЬ\work\common\SeeAll\SeeAll\obj\Debug\SeeAll.csproj.CoreCompileInputs.cache
+C:\Users\artrak\Source\Repos\SeeAll\SeeAll\bin\Debug\SeeAll.exe.config
+C:\Users\artrak\Source\Repos\SeeAll\SeeAll\obj\Debug\SeeAll.exe
+C:\Users\artrak\Source\Repos\SeeAll\SeeAll\obj\Debug\SeeAll.pdb
