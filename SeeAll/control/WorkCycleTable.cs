@@ -109,9 +109,9 @@ namespace SeeAll.control
             }
             try
             {
-                idCycleMax = db.model_CycleDateTime.DefaultIfEmpty()        // find MAX table ID_cycle
-                                                                            //.Where(p => p.FlagDownTimeSmena == false)              
-                    .Max(p => p.Id_DateTime);
+                // find MAX table ID_cycle
+                //.Where(p => p.FlagDownTimeSmena == false)
+                idCycleMax = db.model_CycleDateTime.DefaultIfEmpty().Max(p => p.Id_DateTime);
             }
             catch (Exception ex)
             {
@@ -120,13 +120,11 @@ namespace SeeAll.control
                 Thread.Sleep(Properties.Settings.Default.timerException);
                 return -3;  // no records
             }
-            if (idDateTimeMax_last >= idCycleMax)
+            if (idDateTimeMax_last > idCycleMax)
             {
-                //long idDateTimeMax_last_3 = db.model_dateTime.DefaultIfEmpty()        // find MAX table ID_cycle
                 try
                 {
                     // get next id of Id_DateTime after idCycleMax
-                    //return idCycleMax;
                     return db.model_dateTime.DefaultIfEmpty()
                            .Where(p => p.Id_DateTime > idCycleMax)
                            .Min(p => p.Id_DateTime);
@@ -177,10 +175,10 @@ namespace SeeAll.control
             }
 
             long idCycleMax = db.model_CycleDateTime.DefaultIfEmpty()
-                    .Where(p => p.FlagDownTimeSmena == false)
+                    //.Where(p => p.FlagDownTimeSmena == false)
                     .Max(p => p.Id_DateTime);
 
-            Model_dateTime m_dateTime = db.model_dateTime.FirstOrDefault(idDb => idDb.Id_DateTime == idCycleMax);
+            Model_dateTime m_dateTime = db.model_dateTime.FirstOrDefault(idDb => idDb.Id_DateTime > idCycleMax);
             if (m_dateTime == null)
             {
                 return;
@@ -255,7 +253,8 @@ namespace SeeAll.control
 
                     if (flagNextDateTime >= nextDateTime)
                     {
-                        if (flagNextDateTime > DateTime.Now)
+                        // The time don't may be more current time.
+                        if ((flagNextDateTime > DateTime.Now) && (downtimeArr.Count > 1))
                         {
                             return downtimeArr;
                         }
