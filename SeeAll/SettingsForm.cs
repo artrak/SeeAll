@@ -19,10 +19,13 @@ namespace SeeAll
     {
         public static bool statusConnLimitsCpu = false;    // status connection
         private NLog.Logger logger = LogManager.GetCurrentClassLogger();
+        private LoadCpu loadCpu = null;
 
         public SettingsForm()
         {
             InitializeComponent();
+
+            loadCpu = new LoadCpu();
 
             cpuTypeComboBox.Text = GetCpuTypeConnect.GetStrCpuType(Properties.Settings.Default.CpuType);
             ipTypeTextBox.Text = Properties.Settings.Default.IpCpu;
@@ -144,7 +147,7 @@ namespace SeeAll
         // показать write and read
         private void showSettindBtn_Click(object sender, EventArgs e)
         {
-            LimitsCpu limitsCpu = LoadCpu.ReadLimitsCpu();
+            LimitsCpu limitsCpu = loadCpu.ReadLimits();
             if (limitsCpu == null)
             {
                 showSettindBtn.BackColor = Color.Red;
@@ -158,7 +161,7 @@ namespace SeeAll
 
         private void readSettingBtn_Click(object sender, EventArgs e)
         {
-            LoadCpu.WritePositionLimitsCpu(Convert.ToInt32(readSetLabel.Text));   // write PositionWrite (+1)
+            loadCpu.WritePositionLimitsCpu(Convert.ToInt32(readSetLabel.Text));   // write PositionWrite (+1)
         }
 
         public bool CheckConnection()
@@ -245,7 +248,7 @@ namespace SeeAll
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var dateTime = LoadCpu.ReadDateTimeCpuLogics(Convert.ToInt32(startByteAdrSettings.Text));
+            var dateTime = loadCpu.ReadDatetime(Convert.ToInt32(startByteAdrSettings.Text));
             if (dateTime != null)
             {
                 dateTimeSettingsLabel.Text = dateTime.DateTime.ToString();

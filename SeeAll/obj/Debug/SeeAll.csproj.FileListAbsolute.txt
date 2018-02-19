@@ -51,8 +51,8 @@ C:\Users\artrak\Source\Repos\SeeAll\SeeAll\bin\Debug\EntityFramework.xml
 C:\Users\artrak\Source\Repos\SeeAll\SeeAll\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\artrak\Source\Repos\SeeAll\SeeAll\bin\Debug\NLog.xml
 C:\Users\artrak\Source\Repos\SeeAll\SeeAll\bin\Debug\S7.Net.xml
-C:\Users\artrak\Source\Repos\SeeAll\SeeAll\obj\Debug\SeeAll.csprojResolveAssemblyReference.cache
 C:\Users\artrak\Source\Repos\SeeAll\SeeAll\obj\Debug\SeeAll.Form1.resources
 C:\Users\artrak\Source\Repos\SeeAll\SeeAll\obj\Debug\SeeAll.Properties.Resources.resources
 C:\Users\artrak\Source\Repos\SeeAll\SeeAll\obj\Debug\SeeAll.SettingsForm.resources
 C:\Users\artrak\Source\Repos\SeeAll\SeeAll\obj\Debug\SeeAll.csproj.GenerateResource.Cache
+C:\Users\artrak\Source\Repos\SeeAll\SeeAll\obj\Debug\SeeAll.csprojResolveAssemblyReference.cache

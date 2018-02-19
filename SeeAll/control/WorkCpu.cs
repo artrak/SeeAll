@@ -27,6 +27,8 @@ namespace SeeAll.control
         
         public WorkCpu()
         {
+            LoadCpu loadCpu = new LoadCpu();
+
             while (true)
             {
                 // STOP
@@ -35,16 +37,16 @@ namespace SeeAll.control
                 workCpuStatus = true;
 
                 // Makes the status, for a long time there was no connection with the CPU
-                NoConnectionTimeSec();
+                NoConnectionTimeSec(loadCpu);
 
                 // select limits---------------
-                LimitsCpu limitsCpu = LoadCpu.ReadLimitsCpu();
+                LimitsCpu limitsCpu = loadCpu.ReadLimits();
                 if (limitsCpu == null)
                     continue;   // error connect
                 if ((limitsCpu.PositionRead < limitsCpu.PositionMin)
                     ||(limitsCpu.PositionRead > limitsCpu.PositionMax))
                 {
-                    LoadCpu.WritePositionLimitsCpu(limitsCpu.PositionMin);   // write PositionRead
+                    loadCpu.WritePositionLimitsCpu(limitsCpu.PositionMin);   // write PositionRead
                     continue;
                 }
                 //------------------------------
@@ -54,7 +56,7 @@ namespace SeeAll.control
 
                 
                 // new PositionRead + 1
-                int newIndexDb = LocationIndexDb(limitsCpu);
+                int newIndexDb = LocationIndexDb(loadCpu, limitsCpu);
                 // if there isn't data
                 if (newIndexDb < limitsCpu.PositionMin)
                 {
@@ -64,12 +66,12 @@ namespace SeeAll.control
                 else
                 {
                     // loading data all CPU--------
-                    Model_dateTime modelDTBase = LoadCpu.ReadDateTimeCpu(newIndexDb);
+                    Model_dateTime modelDTBase = loadCpu.ReadDatetime(newIndexDb);
                     if (modelDTBase == null)
                         continue;   // error connect
                     if (modelDTBase.Id_DateTime == -1)
                     {
-                        LoadCpu.WritePositionLimitsCpu(newIndexDb);   // write PositionWrite (+1)
+                        loadCpu.WritePositionLimitsCpu(newIndexDb);   // write PositionWrite (+1)
                         continue;
                     }
                     //------------------------------
@@ -77,7 +79,7 @@ namespace SeeAll.control
                     idMaxSql = modelDTBase.Id_DateTime;  // save ID to static
 
                     // ok <<< Write id and DateTime to SQL
-                    WriteDateTimeToSql(modelDTBase, newIndexDb);
+                    WriteDateTimeToSql(loadCpu, modelDTBase, newIndexDb);
                 }
                 
                 if (Form1.stopThreadAll) return;    // STOP
@@ -108,7 +110,7 @@ namespace SeeAll.control
             }
         }
 
-        private void WriteDateTimeToSql(Model_dateTime modelDTBase, int newIndexDb)
+        private void WriteDateTimeToSql(LoadCpu loadCpu, Model_dateTime modelDTBase, int newIndexDb)
         {
             using (SqlContext db = new SqlContext())
             {
@@ -124,7 +126,7 @@ namespace SeeAll.control
                         db.model_dateTime.Add(modelDTBase);
                         db.SaveChanges();
                     }
-                    LoadCpu.WritePositionLimitsCpu(newIndexDb);   // write PositionRead
+                    loadCpu.WritePositionLimitsCpu(newIndexDb);   // write PositionRead
                 }
                 catch (Exception ex)
                 {
@@ -148,7 +150,7 @@ namespace SeeAll.control
             }
         }
 
-        private int LocationIndexDb(LimitsCpu limitsCpu)
+        private int LocationIndexDb(LoadCpu loadCpu, LimitsCpu limitsCpu)
         {
             // last index BD
             if (limitsCpu.PositionRead == limitsCpu.PositionMax)
@@ -169,7 +171,7 @@ namespace SeeAll.control
             // ok
             if (limitsCpu.PositionRead >= limitsCpu.PositionMin - addPositionIndex)
             {
-                if (CheckDateTimeCpu(limitsCpu))
+                if (CheckDateTimeCpu(loadCpu, limitsCpu))
                     return limitsCpu.PositionWrite + addPositionIndex;  // idex > Write --> new value (will Write < Read)
                 else
                     return limitsCpu.PositionRead + addPositionIndex;   // (will Write > Read)
@@ -188,12 +190,12 @@ namespace SeeAll.control
         /// false - продолжать с Read (+2)
         /// true - продолжать с Write (+2)
         /// </returns>
-        private bool CheckDateTimeCpu(LimitsCpu limitsCpu)
+        private bool CheckDateTimeCpu(LoadCpu loadCpu, LimitsCpu limitsCpu)
         {
             //----------------------------------------------------------------
             // loading data all CPU
-            var tempDtRead = LoadCpu.ReadDateTimeCpu(limitsCpu.PositionRead);
-            var tempDtWrite = LoadCpu.ReadDateTimeCpu(limitsCpu.PositionWrite);
+            var tempDtRead = loadCpu.ReadDatetime(limitsCpu.PositionRead);
+            var tempDtWrite = loadCpu.ReadDatetime(limitsCpu.PositionWrite);
             if ((tempDtRead == null) || (tempDtWrite == null))
             {
                 return false;
@@ -211,7 +213,7 @@ namespace SeeAll.control
             long dtdtReadAfterWrite;
             if ((limitsCpu.PositionWrite + addPositionIndex > limitsCpu.PositionMax) || (limitsCpu.PositionWrite < limitsCpu.PositionMin))
             {
-                var tempDtdtReadAfterWrite = LoadCpu.ReadDateTimeCpu(limitsCpu.PositionMin);
+                var tempDtdtReadAfterWrite = loadCpu.ReadDatetime(limitsCpu.PositionMin);
                 if (tempDtdtReadAfterWrite == null)
                 {
                     return false;
@@ -223,7 +225,7 @@ namespace SeeAll.control
             }
             else
             {
-                var tempDtdtReadAfterWrite = LoadCpu.ReadDateTimeCpu(limitsCpu.PositionWrite + addPositionIndex);
+                var tempDtdtReadAfterWrite = loadCpu.ReadDatetime(limitsCpu.PositionWrite + addPositionIndex);
                 if (tempDtdtReadAfterWrite == null)
                 {
                     return false;
@@ -293,7 +295,7 @@ namespace SeeAll.control
         /// Makes the status, for a long time there was no connection with the CPU
         /// isNoConnectionTimeSec = false - No Connection
         /// </summary>
-        private void NoConnectionTimeSec()
+        private void NoConnectionTimeSec(LoadCpu loadCpu)
         {
             if (LoadCpu.statusConnCpu)
             {

@@ -29,16 +29,18 @@ namespace SeeAll.control
         {
             dateTimeDefoult = new DateTime(1985, 1, 1, 1, 1, 1);    // datetime for error
 
+            LoadCpu loadCpu = new LoadCpu();
+
             string[] result = Properties.Settings.Default.shiftTransition.ToString().Split(',');
             foreach (var itemHour in result)
             {
                 transitionSmenPattern.Add(Convert.ToInt32(itemHour));   // itemHour = 7,15,23
             }
 
-            WorkCycle();
+            WorkCycle(loadCpu);
         }
 
-        private void WorkCycle()
+        private void WorkCycle(LoadCpu loadCpu)
         {
             while (true)
             {
@@ -51,19 +53,18 @@ namespace SeeAll.control
                     {
                         Thread.Sleep(Properties.Settings.Default.timerWorkCycle);
                         long idLast_DateTime = CheckEqualityMaxId(db);
-
                         WorkCpu.statusConnSql = true;
                         switch (idLast_DateTime)
                         {
                             case -1:
-                                NoRecords_CalcTransitionCmena(db, idLast_DateTime);    // return "-1" - (idDateTimeMax = idCycleMax) новых id нет для переноса, проверка на переход смен
+                                NoRecords_CalcTransitionCmena(loadCpu, db, idLast_DateTime);    // return "-1" - (idDateTimeMax = idCycleMax) новых id нет для переноса, проверка на переход смен
                                 break;
                             case -2: continue;                                          // return "-2" - нет записей в таб. Model_dateTime (таб. пустая)
                             case -3:
                                 NoMaxIdTableCycle_CalcTransitionCmena(db);             // return "-3" - нет записей в таб. Model_CycleDateTime (таб. пустая)
                                 break;
                             default:
-                                YesRecords_CalcTransitionCmena(db, idLast_DateTime);  // return id - последний записанный id (можно переносить новые id с таб. Model_dateTime в таб. Model_CycleDateTime 
+                                YesRecords_CalcTransitionCmena(loadCpu, db, idLast_DateTime);  // return id - последний записанный id (можно переносить новые id с таб. Model_dateTime в таб. Model_CycleDateTime 
                                 break;
                         }
                     }
@@ -75,6 +76,8 @@ namespace SeeAll.control
                     }
                 }
                 //System.Diagnostics.Debug.Print(++flagDebug + " ----- " + System.DateTime.Now + "\n");
+
+                CalcSaveDowntimeToSql();
             }
         }
 
@@ -90,15 +93,10 @@ namespace SeeAll.control
         private long CheckEqualityMaxId(SqlContext db)
         {
             long idDateTimeMax;
-            long idDateTimeMax_last;
             long idCycleMax;
             try
             {
-                idDateTimeMax = db.model_dateTime.DefaultIfEmpty().Max(p => p.Id_DateTime);     // find MAX ID of table dateTime in the SQL
-                //TODO corect for downtime 05/02/2018
-                idDateTimeMax_last = db.model_dateTime.DefaultIfEmpty()        // find MAX table ID_cycle
-                    .Where(p => p.Id_DateTime < idDateTimeMax)
-                    .Max(p => p.Id_DateTime);
+                idDateTimeMax = db.model_dateTime.DefaultIfEmpty().Max(p => p.Id_DateTime);     // find MAX ID of table dateTime in the SQL 
             }
             catch (Exception ex)
             {
@@ -109,9 +107,9 @@ namespace SeeAll.control
             }
             try
             {
-                // find MAX table ID_cycle
-                //.Where(p => p.FlagDownTimeSmena == false)
-                idCycleMax = db.model_CycleDateTime.DefaultIfEmpty().Max(p => p.Id_DateTime);
+                idCycleMax = db.model_CycleDateTime.DefaultIfEmpty()        // find MAX table ID_cycle
+                    .Where(p => p.FlagDownTimeSmena == false)
+                    .Max(p => p.Id_DateTime);
             }
             catch (Exception ex)
             {
@@ -120,24 +118,8 @@ namespace SeeAll.control
                 Thread.Sleep(Properties.Settings.Default.timerException);
                 return -3;  // no records
             }
-            if (idDateTimeMax_last > idCycleMax)
-            {
-                try
-                {
-                    // get next id of Id_DateTime after idCycleMax
-                    return db.model_dateTime.DefaultIfEmpty()
-                           .Where(p => p.Id_DateTime > idCycleMax)
-                           .Min(p => p.Id_DateTime);
-                    //return db.model_dateTime.FirstOrDefault(idDb => idDb.Id_DateTime > idCycleMax).Id_DateTime;         // yes, переносим с таб. в таб. (нужна проверка на переход смен) 
-                }
-                catch (Exception ex)
-                {
-                    logger.Error(ex.Message, "CheckEqualityMaxId(SqlContext db)");
-                    WorkCpu.statusConnSql = false;
-                    Thread.Sleep(Properties.Settings.Default.timerException);
-                    return -2;  // no records
-                }
-            }
+            if (idDateTimeMax > idCycleMax)
+                return idCycleMax;  // yes, переносим с таб. в таб. (нужна проверка на переход смен)           
             else
                 return -1;          // no next records (нужна проверка на переход смен)
         }
@@ -165,67 +147,51 @@ namespace SeeAll.control
         /// </summary>
         /// <param name="db">пердаем SqlContext</param>
         /// <param name="idCycleMax">миксим. id а таб. Model_CycleDateTime</param>
-        private void NoRecords_CalcTransitionCmena(SqlContext db, long idMaxCycle)
+        private void NoRecords_CalcTransitionCmena(LoadCpu loadCpu, SqlContext db, long idMaxCycle)
         {
             // PositionRead == PositionWrite ==> считаем простой;
-            if ((!LoadCpu.checkWriteReadEqually) && (isFirstNoRecords_CalcTransitionCmena))
+            if ((!loadCpu.checkWriteReadEqually) && (isFirstNoRecords_CalcTransitionCmena))
             {
                 isFirstNoRecords_CalcTransitionCmena = true;
                 return;
             }
 
             long idCycleMax = db.model_CycleDateTime.DefaultIfEmpty()
-                    //.Where(p => p.FlagDownTimeSmena == false)
+                    .Where(p => p.FlagDownTimeSmena == false)
                     .Max(p => p.Id_DateTime);
 
-            Model_dateTime m_dateTime = db.model_dateTime.FirstOrDefault(idDb => idDb.Id_DateTime > idCycleMax);
+            Model_dateTime m_dateTime = db.model_dateTime.FirstOrDefault(idDb => idDb.Id_DateTime == idCycleMax);
             if (m_dateTime == null)
             {
                 return;
             }
             List<DateTime> downtimeArr = calcTransitionCmena(db, m_dateTime.DateTime, DateTime.Now);
-            CalcDowntimeCmenaToSql(db, idMaxCycle, idCycleMax, downtimeArr, false);  // calc and insert DowntimeCmena to BD SQL
+            CalcDowntimeCmenaToSql(loadCpu, db, idMaxCycle, idCycleMax, downtimeArr, false);  // calc and insert DowntimeCmena to BD SQL
         }
 
         /// <summary>
         /// return id - последний записанный id 
         /// (можно переносить новые id с таб. Model_dateTime в таб. Model_CycleDateTime 
         /// </summary>
-        private void YesRecords_CalcTransitionCmena(SqlContext db, long idMaxCycle)
+        private void YesRecords_CalcTransitionCmena(LoadCpu loadCpu, SqlContext db, long idMaxCycle)
         {
             var lastDateTime = db.model_dateTime.FirstOrDefault(oldDt => oldDt.Id_DateTime == idMaxCycle);
             if (lastDateTime == null)
             {
-                // when the transition shifts 
                 // if nextDateTime = 7, 15, 23 hours there + 1 sec.
                 long tempMaxCycle = idMaxCycle - 1;
                 lastDateTime = db.model_dateTime.FirstOrDefault(oldDt => oldDt.Id_DateTime == tempMaxCycle);
                 if (lastDateTime == null) return;
             }
 
-            long min_DateTime;
-            try
-            {
-                min_DateTime = db.model_dateTime.DefaultIfEmpty()
-                                           .Where(p => p.Id_DateTime > lastDateTime.Id_DateTime)
-                                           .Min(p => p.Id_DateTime);
-            }
-            catch (Exception)
-            {
-                return;
-            }
-            if (min_DateTime == null)
-            {
-                return;
-            }
-            var next_DateTime = db.model_dateTime.FirstOrDefault(nextDt => nextDt.Id_DateTime == min_DateTime);
+            var next_DateTime = db.model_dateTime.FirstOrDefault(nextDt => nextDt.Id_DateTime > idMaxCycle);
             if (next_DateTime == null) return;
 
             // if nextDateTime = 7, 15, 23 hours there + 1 sec.
             next_DateTime.DateTime = protectingTransitionSmena(next_DateTime.DateTime);
 
             List<DateTime> downtimeArr = calcTransitionCmena(db, lastDateTime.DateTime, next_DateTime.DateTime);
-            CalcDowntimeCmenaToSql(db, lastDateTime.Id_DateTime, next_DateTime.Id_DateTime, downtimeArr, true);
+            CalcDowntimeCmenaToSql(loadCpu, db, lastDateTime.Id_DateTime, next_DateTime.Id_DateTime, downtimeArr, true);
         }
 
         /// <summary>
@@ -253,11 +219,6 @@ namespace SeeAll.control
 
                     if (flagNextDateTime >= nextDateTime)
                     {
-                        // The time don't may be more current time.
-                        if ((flagNextDateTime > DateTime.Now) && (downtimeArr.Count > 1))
-                        {
-                            return downtimeArr;
-                        }
                         // последняя запись
                         downtimeArr.Add(nextDateTime);
                         return downtimeArr;
@@ -275,9 +236,9 @@ namespace SeeAll.control
         }
 
         // calc and insert DowntimeCmena to BD SQL
-        private void CalcDowntimeCmenaToSql(SqlContext db, long lastId, long nextId, List<DateTime> downtimeArr, bool flagYesRecords)
+        private void CalcDowntimeCmenaToSql(LoadCpu loadCpu, SqlContext db, long lastId, long nextId, List<DateTime> downtimeArr, bool flagYesRecords)
         {
-            for (int i = 0; i < downtimeArr.Count - 1; i++)
+            for (int i = 1; i < downtimeArr.Count; i++)
             {
                 if ((!flagYesRecords) && (i == downtimeArr.Count - 1)) return;  // ели нет последнего колеса, выход, не записывая первую запись
 
@@ -298,20 +259,16 @@ namespace SeeAll.control
                 }
 
                 mCycleDateTime.Id_DateTime = Convert.ToInt64(
-                                                                LoadCpu.normalIntToString(downtimeArr[i].Year)
-                                                                + LoadCpu.normalIntToString(downtimeArr[i].Month)
-                                                                + LoadCpu.normalIntToString(downtimeArr[i].Day)
-                                                                + LoadCpu.normalIntToString(downtimeArr[i].Hour)
-                                                                + LoadCpu.normalIntToString(downtimeArr[i].Minute)
-                                                                + LoadCpu.normalIntToString(downtimeArr[i].Second)
+                                                                loadCpu.NormalIntToString(downtimeArr[i].Year)
+                                                                + loadCpu.NormalIntToString(downtimeArr[i].Month)
+                                                                + loadCpu.NormalIntToString(downtimeArr[i].Day)
+                                                                + loadCpu.NormalIntToString(downtimeArr[i].Hour)
+                                                                + loadCpu.NormalIntToString(downtimeArr[i].Minute)
+                                                                + loadCpu.NormalIntToString(downtimeArr[i].Second)
                                                                 );
 
                 //TODO проверка на дубликаты в БД
                 var lastDateTime = db.model_CycleDateTime.FirstOrDefault(oldDt => oldDt.Id_DateTime == mCycleDateTime.Id_DateTime);
-                //var lastDateTime = db.model_CycleDateTime
-                //    .Where(p => p.Id_DateTime == mCycleDateTime.Id_DateTime)
-                //    .Where(p => p.FlagDownTimeSmena == false)
-                //    .FirstOrDefault();
 
                 if (lastDateTime != null)
                 {
@@ -319,24 +276,11 @@ namespace SeeAll.control
                     continue;
                 }
 
-                TimeSpan downtime = downtimeArr[i + 1].Subtract(downtimeArr[i]);
-                mCycleDateTime.CycleTime = downtime.ToString("hh':'mm':'ss");
-
-                // > 1 min (in sec) - простой
-                if (downtime > TimeSpan.FromSeconds(Properties.Settings.Default.timerStandartCycle))
-                {
-                    mCycleDateTime.DownTime =
-                        (downtime - TimeSpan.FromSeconds(Properties.Settings.Default.timerStandartCycle))
-                        .ToString("hh':'mm':'ss");
-                }
-
-                //если меньше 2 min тогда микропростой
-                if (downtime < TimeSpan.FromSeconds(Properties.Settings.Default.timerMicroDowntime))    // 2 min
-                    mCycleDateTime.Microsimple = true;
-                else
-                    mCycleDateTime.Microsimple = false;
-
+                mCycleDateTime.CycleTime = keyNull;
+                mCycleDateTime.DownTime = keyNull;
+                mCycleDateTime.Microsimple = false;
                 db.model_CycleDateTime.Add(mCycleDateTime);
+
                 //db.SaveChanges();
                 SaveChangesSql(db, mCycleDateTime.Id_Cycle, "CalcDowntimeCmenaToSql(SqlContext db, long lastId, long nextId, List<DateTime> downtimeArr, bool flagYesRecords)");
             }
@@ -372,6 +316,74 @@ namespace SeeAll.control
                 }
             }
             return smenaDateTime;
+        }
+
+        string keyNull = "0";
+        private void CalcSaveDowntimeToSql()
+        {
+            using (var db = new SqlContext())
+            {
+                try
+                {
+                    var m_dateTime = db.model_CycleDateTime.Where(p => p.CycleTime.Equals(keyNull)).OrderBy(p => p.Id_DateTime).ToList();
+                    if (m_dateTime.Count <= 1)
+                    {
+                        return;
+                    }
+
+                    long lastId = 0;
+
+                    for (int i = 0; i < m_dateTime.Count - 1; i++)
+                    {
+                        lastId = m_dateTime[i].Id_Cycle;
+
+                        TimeSpan downtime = ConvertIdToDatetime(m_dateTime[i + 1].Id_DateTime).Subtract(ConvertIdToDatetime(m_dateTime[i].Id_DateTime));
+                        m_dateTime[i].CycleTime = downtime.ToString("hh':'mm':'ss");
+
+                        // > 1 min (in sec) - простой
+                        if (downtime > TimeSpan.FromSeconds(Properties.Settings.Default.timerStandartCycle))
+                        {
+                            m_dateTime[i].DownTime =
+                                (downtime - TimeSpan.FromSeconds(Properties.Settings.Default.timerStandartCycle))
+                                .ToString("hh':'mm':'ss");
+                        }
+
+                        //если меньше 2 min тогда микропростой
+                        if (downtime < TimeSpan.FromSeconds(Properties.Settings.Default.timerMicroDowntime))    // 2 min
+                            m_dateTime[i].Microsimple = true;
+                        else
+                            m_dateTime[i].Microsimple = false;
+                    }
+
+
+                    //db.SaveChanges();
+                    SaveChangesSql(db, lastId, "CalcSaveDowntimeToSql(SqlContext db)");
+                }
+                catch (Exception ex)
+                {
+                    logger.Error(ex.Message);
+                }
+            }
+        }
+
+        private DateTime ConvertIdToDatetime(long valueId)
+        {
+            int y, m, d, h, mn, s;
+            try
+            {
+                y = Convert.ToInt32(valueId / 10000000000);
+                m = Convert.ToInt32(valueId % 10000000000 / 100000000);
+                d = Convert.ToInt32(valueId % 100000000 / 1000000);
+                h = Convert.ToInt32(valueId % 1000000 / 10000);
+                mn = Convert.ToInt32(valueId % 10000 / 100);
+                s = Convert.ToInt32(valueId % 100);
+                return new DateTime(y, m, d, h, mn, s);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "ConvertIdToDatetime(long valueId)");
+                return dateTimeDefoult;
+            }
         }
     }
 }
