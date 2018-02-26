@@ -16,11 +16,11 @@ namespace SeeAll.control.communication
         public bool checkWriteReadEqually = false;               // check whether you can write or not
 
         // loading Datetime from the CPU
-        public Model_dateTime ReadDatetime(int startByteAdr)
+        public Model_dateTime ReadDatetime(int startByteAdress)
         {
             for (int i = 0; i < LoadingPLCSettings.numberOfConnectionAttempts; i++)  // counter
             {
-                Model_dateTime model_dateTime = ReadDatetimeLogics(startByteAdr);
+                Model_dateTime model_dateTime = ReadDatetimeLogics(startByteAdress);
                 if (model_dateTime != null)
                 {
                     statusConnectionCpu = true;
@@ -40,10 +40,10 @@ namespace SeeAll.control.communication
             return null;   // There aren't data
         }
 
-        private Model_dateTime ReadDatetimeLogics(int startByteAdr)
+        private Model_dateTime ReadDatetimeLogics(int startByteAdress)
         {
             int dataBlock = Properties.Settings.Default.DataBlockDatetime;
-            LoadingPLCSettings.indexStep = startByteAdr - 1;
+            LoadingPLCSettings.indexStep = startByteAdress - 1;
             Model_dateTime modelDateTime = null;
             //int year = 0, month = 0, day = 0, hour = 0, minute = 0, second = 0;
             int[] dateTimeArr = new int[6];
@@ -84,16 +84,16 @@ namespace SeeAll.control.communication
             return modelDateTime;
         }
 
-        private long getIdDateTimeForReadDatetime(int[] dateTimeArr)
+        private long getIdDateTimeForReadDatetime(int[] dateTimeArray)
         {
             // IF year, month, day = 0 THERE Id_DateTime = -1;
-            if ((dateTimeArr[0] == 0) || (dateTimeArr[1] == 0) || (dateTimeArr[2] == 0))
+            if ((dateTimeArray[0] == 0) || (dateTimeArray[1] == 0) || (dateTimeArray[2] == 0))
             {
                 return -1;
             }
 
             string strDtId = "";
-            foreach (var itemDt in dateTimeArr)
+            foreach (var itemDt in dateTimeArray)
             {
                 strDtId += NormalIntToString(itemDt);
             }
@@ -112,7 +112,7 @@ namespace SeeAll.control.communication
                 if (limitsCpu != null)
                 {
                     statusConnectionCpu = true;
-                    CheckWREqually(limitsCpu);      // for check
+                    CheckWriteReadEqually(limitsCpu);      // for check
                     return limitsCpu;               // There are data
                 }
                 Thread.Sleep(Properties.Settings.Default.LoadCpuExceptionTime);     //msec
@@ -159,9 +159,9 @@ namespace SeeAll.control.communication
             return limitsCpu;
         }
 
-        private int GetPlcRead(Plc plc, int dataBlock, int startByteAdr)
+        private int GetPlcRead(Plc plc, int dataBlock, int startByteAdress)
         {
-            return Convert.ToInt32(plc.Read(DataType.DataBlock, Properties.Settings.Default.DataBlockLimit, startByteAdr, VarType.Int, 1));
+            return Convert.ToInt32(plc.Read(DataType.DataBlock, Properties.Settings.Default.DataBlockLimit, startByteAdress, VarType.Int, 1));
         }
 
         public void WritePositionLimitsCpu(int newPositionRead)
@@ -211,7 +211,7 @@ namespace SeeAll.control.communication
         /// <summary>
         /// if(PositionRead == PositionWrite) checkWriteReadEqually = true;
         /// </summary>
-        private void CheckWREqually(LimitsCpu limitsCpu)
+        private void CheckWriteReadEqually(LimitsCpu limitsCpu)
         {
             if (limitsCpu.PositionRead == limitsCpu.PositionWrite)
             {
