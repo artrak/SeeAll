@@ -58,7 +58,7 @@ namespace SeeAll.control.communication
             try
             {
                 using (var plc = new Plc(
-                    GetCpuTypeConnect.GetCpuType(Properties.Settings.Default.CpuType),
+                    GetCpuTypeConnect.GetCpu(Properties.Settings.Default.CpuType),
                     Properties.Settings.Default.IpCpu,
                     Properties.Settings.Default.RackCpu,
                     Properties.Settings.Default.SlotCpu))   //"172.17.132.200"       "127.0.0.1"
@@ -135,7 +135,7 @@ namespace SeeAll.control.communication
             try
             {
                 using (var plc = new Plc(
-                    GetCpuTypeConnect.GetCpuType(Properties.Settings.Default.CpuType),
+                    GetCpuTypeConnect.GetCpu(Properties.Settings.Default.CpuType),
                     Properties.Settings.Default.IpCpu,
                     Properties.Settings.Default.RackCpu,
                     Properties.Settings.Default.SlotCpu))   //"172.17.132.200"
@@ -176,7 +176,7 @@ namespace SeeAll.control.communication
             try
             {
                 using (var plc = new Plc(
-                    GetCpuTypeConnect.GetCpuType(Properties.Settings.Default.CpuType),
+                    GetCpuTypeConnect.GetCpu(Properties.Settings.Default.CpuType),
                     Properties.Settings.Default.IpCpu,
                     Properties.Settings.Default.RackCpu,
                     Properties.Settings.Default.SlotCpu))   //"172.17.132.200"       "127.0.0.1"
