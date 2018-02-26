@@ -80,6 +80,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="control\communication\LoadCpu.cs" />
+    <Compile Include="control\communication\LoadingPLC.cs" />
+    <Compile Include="control\communication\LoadingPLCSettings.cs" />
     <Compile Include="control\WorkCpu.cs" />
     <Compile Include="control\WorkCycleTable.cs" />
     <Compile Include="Form1.cs">
