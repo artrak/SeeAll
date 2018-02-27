@@ -16,10 +16,10 @@ namespace SeeAll.control.communication
         public int byteStep { get; set; }
         public string dbPLC { get; set; }
         public string dbwPLC { get; set; }
-        public int waitingTime { get; set; } // waiting time for open connection PLC
-        public int numberAttempts { get; set; }      // number of connection attempts
-        public bool statusConnectionPLC { get; set; }
-        public bool checkWriteReadEqually { get; set; }
+        public int waitingTime { get; set; }            // waiting time for open connection PLC
+        public int numberAttempts { get; set; }         // number of connection attempts
+        public bool statusConnection { get; set; }   // status of connection to PLC
+        public bool equalityCheck { get; set; }         // equality check of write and read position PLC
 
         public LoadingPLC()
         {
@@ -28,8 +28,8 @@ namespace SeeAll.control.communication
             dbwPLC = ".DBW2";
             waitingTime = 100;
             numberAttempts = 5;
-            statusConnectionPLC = false;
-            checkWriteReadEqually = false;
+            statusConnection = false;
+            equalityCheck = false;
         }
 
         // loading Datetime from the CPU
@@ -40,12 +40,12 @@ namespace SeeAll.control.communication
                 Model_dateTime model_dateTime = ReadDatetimeLogics(startByteAdress);
                 if (model_dateTime != null)
                 {
-                    statusConnectionPLC = true;
+                    statusConnection = true;
                     return model_dateTime;
                 }
                 Thread.Sleep(Properties.Settings.Default.LoadCpuExceptionTime);     //msec
             }
-            statusConnectionPLC = false;
+            statusConnection = false;
             return null;   // There aren't data
         }
 
@@ -121,13 +121,13 @@ namespace SeeAll.control.communication
                 LimitsCpu limitsCpu = ReadLimitsLogics();
                 if (limitsCpu != null)
                 {
-                    statusConnectionPLC = true;
+                    statusConnection = true;
                     CheckWriteReadEqually(limitsCpu);      // for check
                     return limitsCpu;                      // There are data
                 }
                 Thread.Sleep(Properties.Settings.Default.LoadCpuExceptionTime);     //msec
             }
-            statusConnectionPLC = false;
+            statusConnection = false;
             //TODO need a logger
             return null;   // There aren't data
         }
@@ -189,19 +189,19 @@ namespace SeeAll.control.communication
                     plc.Open();
                     if (plc.IsConnected)
                     {
-                        statusConnectionPLC = true;
+                        statusConnection = true;
                         plc.Write(dbPLC + Properties.Settings.Default.DataBlockLimit + dbwPLC, newPositionRead);
                     }
                     else
                     {
-                        statusConnectionPLC = false;
+                        statusConnection = false;
                         //TODO need a logger
                     }
                 }
             }
             catch (Exception ex)
             {
-                statusConnectionPLC = false;
+                statusConnection = false;
                 //TODO need a logger
             }
         }
@@ -226,11 +226,11 @@ namespace SeeAll.control.communication
         {
             if (limitsCpu.PositionRead == limitsCpu.PositionWrite)
             {
-                checkWriteReadEqually = true;
+                equalityCheck = true;
             }
             else
             {
-                checkWriteReadEqually = false;
+                equalityCheck = false;
             }
         }
     }
