@@ -12,13 +12,30 @@ namespace SeeAll.control.communication
 {
     public class LoadingPLC
     {
-        public bool statusConnectionPLC = false;          // status connection
-        public bool checkWriteReadEqually = false;               // check whether you can write or not
+
+        public int byteStep { get; set; }
+        public string dbPLC { get; set; }
+        public string dbwPLC { get; set; }
+        public int waitingTime { get; set; } // waiting time for open connection PLC
+        public int numberAttempts { get; set; }      // number of connection attempts
+        public bool statusConnectionPLC { get; set; }
+        public bool checkWriteReadEqually { get; set; }
+
+        public LoadingPLC()
+        {
+            byteStep = 12;
+            dbPLC = "DB";
+            dbwPLC = ".DBW2";
+            waitingTime = 100;
+            numberAttempts = 5;
+            statusConnectionPLC = false;
+            checkWriteReadEqually = false;
+        }
 
         // loading Datetime from the CPU
         public Model_dateTime ReadDateTime(int startByteAdress)
         {
-            for (int i = 0; i < LoadingPLCSettings.numberOfConnectionAttempts; i++)  // counter
+            for (int i = 0; i < numberAttempts; i++)  // counter
             {
                 Model_dateTime model_dateTime = ReadDatetimeLogics(startByteAdress);
                 if (model_dateTime != null)
@@ -37,7 +54,7 @@ namespace SeeAll.control.communication
             int dataBlock = Properties.Settings.Default.DataBlockDatetime;
 
             int[] dateTimeArray = new int[6];
-            int addStepBytes = (--startByteAdress) * LoadingPLCSettings.byteStep;
+            int addStepBytes = (--startByteAdress) * byteStep;
             try
             {
                 using (var plc = new Plc(
@@ -46,7 +63,7 @@ namespace SeeAll.control.communication
                     Properties.Settings.Default.RackCpu,
                     Properties.Settings.Default.SlotCpu))   //"172.17.132.200"       "127.0.0.1"
                 {
-                    Thread.Sleep(LoadingPLCSettings.timeWaitForOpenConnectionCpu);
+                    Thread.Sleep(waitingTime);
                     plc.Open();
                     if (plc.IsConnected)
                     {
@@ -99,7 +116,7 @@ namespace SeeAll.control.communication
 
         public LimitsCpu ReadLimits()
         {
-            for (int i = 0; i < LoadingPLCSettings.numberOfConnectionAttempts; i++)      // counter
+            for (int i = 0; i < numberAttempts; i++)      // counter
             {
                 LimitsCpu limitsCpu = ReadLimitsLogics();
                 if (limitsCpu != null)
@@ -126,7 +143,7 @@ namespace SeeAll.control.communication
                     Properties.Settings.Default.RackCpu,
                     Properties.Settings.Default.SlotCpu))   //"172.17.132.200"
                 {
-                    Thread.Sleep(LoadingPLCSettings.timeWaitForOpenConnectionCpu);
+                    Thread.Sleep(waitingTime);
                     plc.Open();
                     if (plc.IsConnected)
                     {
@@ -168,12 +185,12 @@ namespace SeeAll.control.communication
                     Properties.Settings.Default.RackCpu,
                     Properties.Settings.Default.SlotCpu))   //"172.17.132.200"       "127.0.0.1"
                 {
-                    Thread.Sleep(LoadingPLCSettings.timeWaitForOpenConnectionCpu);
+                    Thread.Sleep(waitingTime);
                     plc.Open();
                     if (plc.IsConnected)
                     {
                         statusConnectionPLC = true;
-                        plc.Write(LoadingPLCSettings.dbPLC + Properties.Settings.Default.DataBlockLimit + LoadingPLCSettings.dbwPLC, newPositionRead);
+                        plc.Write(dbPLC + Properties.Settings.Default.DataBlockLimit + dbwPLC, newPositionRead);
                     }
                     else
                     {
