@@ -14,7 +14,7 @@ namespace SeeAll.control
     {
         public static bool statusConnSql = false;    // status connection
         public static bool workCpuStatus = false;
-        public static long idMaxSql = 0;
+        public static long idMaxSql = 0; //
         public static int writeIndex = 0;
         public static int readIndex = 0;
         private int addPositionIndex = 1;
