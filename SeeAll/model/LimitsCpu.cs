@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SeeAll.model
 {
-    class LimitsCpu
+    public class LimitsCpu
     {
         public int PositionWrite { get; set; }
         public int PositionRead { get; set; }

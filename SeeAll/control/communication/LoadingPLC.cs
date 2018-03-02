@@ -10,51 +10,51 @@ using SeeAll.model;
 
 namespace SeeAll.control.communication
 {
-    class LoadCpu
+    public class LoadingPLC
     {
-        private int byteStep = 12;                               // step in bytes
-        private int indexShag = 1;                               // to calculate the addition of a step in bytes
-        public static bool statusConnCpu = false;                       // status connection
-        public int timeWaitForOpenConnectCpu = 100;              // waiting time for an open Cpu connection
-        private int numberOfConnectionAttempts = 5;              // number of connection attempts
-        public bool checkWriteReadEqually = false;               // check whether you can write or not
-        public DateTime defaultErrDateTime = new DateTime(1955, 1, 1, 1, 1, 1);
-        private string dbTable = "DB";
-        private string dbwTable = ".DBW2";
+
+        public int byteStep { get; set; }
+        public string dbPLC { get; set; }
+        public string dbwPLC { get; set; }
+        public int waitingTime { get; set; }            // waiting time for open connection PLC
+        public int numberAttempts { get; set; }         // number of connection attempts
+        public bool statusConnection { get; set; }   // status of connection to PLC
+        public bool equalityCheck { get; set; }         // equality check of write and read position PLC
+
+        public LoadingPLC()
+        {
+            byteStep = 12;
+            dbPLC = "DB";
+            dbwPLC = ".DBW2";
+            waitingTime = 100;
+            numberAttempts = 5;
+            statusConnection = false;
+            equalityCheck = false;
+        }
 
         // loading Datetime from the CPU
-        public Model_dateTime ReadDatetime(int startByteAdr)
+        public Model_dateTime ReadDateTime(int startByteAdress)
         {
-            for (int i = 0; i < numberOfConnectionAttempts; i++)  // counter
+            for (int i = 0; i < numberAttempts; i++)  // counter
             {
-                Model_dateTime model_dateTime = ReadDatetimeLogics(startByteAdr);
+                Model_dateTime model_dateTime = ReadDatetimeLogics(startByteAdress);
                 if (model_dateTime != null)
                 {
-                    statusConnCpu = true;
-                    // IF year, month, day = 0 THERE Id_DateTime = -1;
-                    if (model_dateTime.Id_DateTime == -1)
-                    {
-                        statusConnCpu = true;
-                        //TODO need a logger
-                        return model_dateTime;   // There are data
-                    }    
-                    else                
-                        return model_dateTime;   // There are data
-                }                
+                    statusConnection = true;
+                    return model_dateTime;
+                }
                 Thread.Sleep(Properties.Settings.Default.LoadCpuExceptionTime);     //msec
             }
-            statusConnCpu = false;
+            statusConnection = false;
             return null;   // There aren't data
         }
 
-        private Model_dateTime ReadDatetimeLogics(int startByteAdr)
+        private Model_dateTime ReadDatetimeLogics(int startByteAdress)
         {
             int dataBlock = Properties.Settings.Default.DataBlockDatetime;
-            indexShag = startByteAdr - 1;
-            Model_dateTime modelDateTime = null;
-            //int year = 0, month = 0, day = 0, hour = 0, minute = 0, second = 0;
-            int[] dateTimeArr = new int[6];
-            int addShagBytes = indexShag * byteStep;
+
+            int[] dateTimeArray = new int[6];
+            int addStepBytes = (--startByteAdress) * byteStep;
             try
             {
                 using (var plc = new Plc(
@@ -63,68 +63,71 @@ namespace SeeAll.control.communication
                     Properties.Settings.Default.RackCpu,
                     Properties.Settings.Default.SlotCpu))   //"172.17.132.200"       "127.0.0.1"
                 {
-                    Thread.Sleep(timeWaitForOpenConnectCpu);
+                    Thread.Sleep(waitingTime);
                     plc.Open();
                     if (plc.IsConnected)
-                    {    
-                        modelDateTime = new Model_dateTime();
+                    {
+                        Model_dateTime modelDateTime = new Model_dateTime();
 
-                        for (int i = 0; i < dateTimeArr.Length; i++)
+                        for (int i = 0; i < dateTimeArray.Length; i++)
                         {
-                            dateTimeArr[i] = GetPlcRead(plc, dataBlock, i * 2 + addShagBytes);
+                            dateTimeArray[i] = GetPlcRead(plc, dataBlock, i * 2 + addStepBytes); // every two bytes
                         }
-                        modelDateTime.Id_DateTime = getIdDateTimeForReadDatetime(dateTimeArr);
-                        modelDateTime.DateTime = getDateTimeForReadDatetime(dateTimeArr);
+                        modelDateTime.Id_DateTime = getIdDateTimeForReadDatetime(dateTimeArray);
+                        modelDateTime.DateTime = getDateTimeForReadDatetime(dateTimeArray);
+
+                        return modelDateTime;
                     }
                     else
                     {
-                        modelDateTime = null;
+                        return null;
                         //TODO need a logger
                     }
                 }
             }
             catch (Exception ex)
             {
-                modelDateTime = null;
+                return null;
                 //TODO need a logger
             }
-            return modelDateTime;
+            
         }
 
-       private long getIdDateTimeForReadDatetime(int[] dateTimeArr)
+        private long getIdDateTimeForReadDatetime(int[] dateTimeArray)
         {
             // IF year, month, day = 0 THERE Id_DateTime = -1;
-            if ((dateTimeArr[0] == 0) || (dateTimeArr[1] == 0) || (dateTimeArr[2] == 0))
+            if ((dateTimeArray[0] == 0) || (dateTimeArray[1] == 0) || (dateTimeArray[2] == 0))
             {
                 return -1;
             }
 
-            string strDtId = "";
-            foreach (var itemDt in dateTimeArr)
+            string stringIdDateTime = "";
+            foreach (var item in dateTimeArray)
             {
-                strDtId += NormalIntToString(itemDt);
+                stringIdDateTime += NormalIntToString(item);
             }
-            return Convert.ToInt64(strDtId);
+            return Convert.ToInt64(stringIdDateTime);
         }
-       private DateTime getDateTimeForReadDatetime(int[] dateTimeArr)
-       {            
-           return new DateTime(dateTimeArr[0], dateTimeArr[1], dateTimeArr[2], dateTimeArr[3], dateTimeArr[4], dateTimeArr[5]);
-       }
+
+        private DateTime getDateTimeForReadDatetime(int[] dateTimeArray)
+        {
+            return new DateTime(dateTimeArray[0], dateTimeArray[1], dateTimeArray[2], dateTimeArray[3], dateTimeArray[4], dateTimeArray[5]);
+        }
 
         public LimitsCpu ReadLimits()
-        {            
-            for (int i = 0; i < numberOfConnectionAttempts; i++)      // counter
+        {
+            for (int i = 0; i < numberAttempts; i++)      // counter
             {
                 LimitsCpu limitsCpu = ReadLimitsLogics();
                 if (limitsCpu != null)
                 {
-                    statusConnCpu = true;
-                    CheckWREqually(limitsCpu);      // for check
-                    return limitsCpu;               // There are data
+                    statusConnection = true;
+                    CheckWriteReadEqually(limitsCpu);      // for check
+                    return limitsCpu;                      // There are data
                 }
                 Thread.Sleep(Properties.Settings.Default.LoadCpuExceptionTime);     //msec
             }
-            statusConnCpu = false;
+            statusConnection = false;
             //TODO need a logger
             return null;   // There aren't data
         }
@@ -140,7 +143,7 @@ namespace SeeAll.control.communication
                     Properties.Settings.Default.RackCpu,
                     Properties.Settings.Default.SlotCpu))   //"172.17.132.200"
                 {
-                    Thread.Sleep(timeWaitForOpenConnectCpu);
+                    Thread.Sleep(waitingTime);
                     plc.Open();
                     if (plc.IsConnected)
                     {
@@ -150,25 +153,26 @@ namespace SeeAll.control.communication
                         limitsCpu.PositionRead = GetPlcRead(plc, Properties.Settings.Default.DataBlockLimit, 2);
                         limitsCpu.PositionMin = GetPlcRead(plc, Properties.Settings.Default.DataBlockLimit, 4);
                         limitsCpu.PositionMax = GetPlcRead(plc, Properties.Settings.Default.DataBlockLimit, 6);
+
+                        return limitsCpu;
                     }
                     else
                     {
-                        limitsCpu = null;
+                        return null;
                         //TODO need a logger
                     }
                 }
             }
             catch (Exception ex)
             {
-                limitsCpu = null;
+                return null;
                 //TODO need a logger
-            }
-            return limitsCpu;
+            } 
         }
 
-        private int GetPlcRead(Plc plc, int dataBlock, int startByteAdr)
+        private int GetPlcRead(Plc plc, int dataBlock, int startByteAdress)
         {
-            return Convert.ToInt32(plc.Read(DataType.DataBlock, Properties.Settings.Default.DataBlockLimit, startByteAdr, VarType.Int, 1));
+            return Convert.ToInt32(plc.Read(DataType.DataBlock, Properties.Settings.Default.DataBlockLimit, startByteAdress, VarType.Int, 1));
         }
 
         public void WritePositionLimitsCpu(int newPositionRead)
@@ -181,23 +185,23 @@ namespace SeeAll.control.communication
                     Properties.Settings.Default.RackCpu,
                     Properties.Settings.Default.SlotCpu))   //"172.17.132.200"       "127.0.0.1"
                 {
-                    Thread.Sleep(timeWaitForOpenConnectCpu);
+                    Thread.Sleep(waitingTime);
                     plc.Open();
                     if (plc.IsConnected)
                     {
-                        statusConnCpu = true;
-                        plc.Write(dbTable + Properties.Settings.Default.DataBlockLimit + dbwTable, newPositionRead);
+                        statusConnection = true;
+                        plc.Write(dbPLC + Properties.Settings.Default.DataBlockLimit + dbwPLC, newPositionRead);
                     }
                     else
                     {
-                        statusConnCpu = false;
+                        statusConnection = false;
                         //TODO need a logger
                     }
                 }
             }
             catch (Exception ex)
             {
-                statusConnCpu = false;
+                statusConnection = false;
                 //TODO need a logger
             }
         }
@@ -218,15 +222,15 @@ namespace SeeAll.control.communication
         /// <summary>
         /// if(PositionRead == PositionWrite) checkWriteReadEqually = true;
         /// </summary>
-        private void CheckWREqually(LimitsCpu limitsCpu)
+        private void CheckWriteReadEqually(LimitsCpu limitsCpu)
         {
             if (limitsCpu.PositionRead == limitsCpu.PositionWrite)
             {
-                checkWriteReadEqually = true;
+                equalityCheck = true;
             }
             else
             {
-                checkWriteReadEqually = false;
+                equalityCheck = false;
             }
         }
     }

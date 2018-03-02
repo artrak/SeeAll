@@ -7,9 +7,9 @@ using S7.Net;
 
 namespace SeeAll.model
 {
-    static class GetCpuTypeConnect
+    public static class GetCpuTypeConnect
     {
-        public static CpuType GetCpuType(int index)
+        public static CpuType GetCpu(int index)
         {
             switch (index)
             {
@@ -23,7 +23,7 @@ namespace SeeAll.model
             }
         }
 
-        public static string GetStrCpuType(int index)
+        public static string GetString(int index)
         {
             switch (index)
             {
@@ -37,9 +37,9 @@ namespace SeeAll.model
             }
         }
 
-        public static int GetIntCpuType(string indexStr)
+        public static int GetInt(string index)
         {
-            switch (indexStr)
+            switch (index)
             {
                 case "S71200": return 1;
                 case "S71500": return 2;
