@@ -14,7 +14,7 @@ namespace SeeAll.control
     {
         public static bool statusConnSql = false;    // status connection
         public static bool workCpuStatus = false;
-        public static long idMaxSql = 0;
+        public static long idMaxSql = 0; //
         public static int writeIndex = 0;
         public static int readIndex = 0;
         private int addPositionIndex = 1;
@@ -22,71 +22,84 @@ namespace SeeAll.control
 
         private static long noConnectionLimitTimeSec = 600000;    // sec
         private bool isNoConnectionTimeSec = true;
-
-        private NLog.Logger logger = LogManager.GetCurrentClassLogger();
         
         public WorkCpu()
         {
-            LoadCpu loadCpu = new LoadCpu();
-
+            LoadingPLC loadPLC = new LoadingPLC();
             while (true)
+                if (GoWorkCpu(loadPLC))   // 0 --> err
+                    break;
+        }
+
+        private bool GoWorkCpu(LoadingPLC loadPLC)
+        {
+            // STOP
+            if (Form1.stopThreadAll)
+                return false;
+
+            // Sretp 1
+            int nextIdCpu = GetNextIdCpu(loadPLC);
+            if (nextIdCpu == -1)
+                return false;
+            // Step 2
+            Model_dateTime modelDTBase = WriteIndexCpu(loadPLC, nextIdCpu);
+            if (modelDTBase == null)
+                return false;
+            // Step 3
+            WriteDTSql(loadPLC, modelDTBase, nextIdCpu);
+            // FINISH Work with CPU
+            return true;    // all right
+        }
+
+        private int GetNextIdCpu(LoadingPLC loadPLC)
+        {
+            LimitsCpu limitsCpu = loadPLC.ReadLimits();
+
+            if (limitsCpu == null)
+                return -1;                                            // error connect
+
+            if ((limitsCpu.PositionRead < limitsCpu.PositionMin)
+                || (limitsCpu.PositionRead > limitsCpu.PositionMax))
             {
-                // STOP
-                if (Form1.stopThreadAll) return;
-
-                workCpuStatus = true;
-
-                // Makes the status, for a long time there was no connection with the CPU
-                NoConnectionTimeSec(loadCpu);
-
-                // select limits---------------
-                LimitsCpu limitsCpu = loadCpu.ReadLimits();
-                if (limitsCpu == null)
-                    continue;   // error connect
-                if ((limitsCpu.PositionRead < limitsCpu.PositionMin)
-                    ||(limitsCpu.PositionRead > limitsCpu.PositionMax))
-                {
-                    loadCpu.WritePositionLimitsCpu(limitsCpu.PositionMin);   // write PositionRead
-                    continue;
-                }
-                //------------------------------
-
-                writeIndex = limitsCpu.PositionWrite;
-                readIndex = limitsCpu.PositionRead;
-
-                
+                loadPLC.WritePositionLimitsCpu(limitsCpu.PositionMin);  // write PositionRead
+                return -1;
+            }
+            else
+            {
                 // new PositionRead + 1
-                int newIndexDb = LocationIndexDb(loadCpu, limitsCpu);
+                int newIndexDb = LocationIndexDb(loadPLC, limitsCpu);
                 // if there isn't data
                 if (newIndexDb < limitsCpu.PositionMin)
                 {
                     FindMaxIdFromSql();
-                    continue;
+                    return -1;
                 }
                 else
-                {
-                    // loading data all CPU--------
-                    Model_dateTime modelDTBase = loadCpu.ReadDatetime(newIndexDb);
-                    if (modelDTBase == null)
-                        continue;   // error connect
-                    if (modelDTBase.Id_DateTime == -1)
-                    {
-                        loadCpu.WritePositionLimitsCpu(newIndexDb);   // write PositionWrite (+1)
-                        continue;
-                    }
-                    //------------------------------
-
-                    idMaxSql = modelDTBase.Id_DateTime;  // save ID to static
-
-                    // ok <<< Write id and DateTime to SQL
-                    WriteDateTimeToSql(loadCpu, modelDTBase, newIndexDb);
-                }
-                
-                if (Form1.stopThreadAll) return;    // STOP
-                Thread.Sleep(Properties.Settings.Default.timerWorkCycle);
+                    return newIndexDb;
             }
         }
 
+        private Model_dateTime WriteIndexCpu(LoadingPLC loadPLC, int newIndexDb)
+        {
+            // loading data all CPU--------
+            Model_dateTime modelDTBase = loadPLC.ReadDateTime(newIndexDb);
+            if (modelDTBase.Id_DateTime == -1)
+            {
+                loadPLC.WritePositionLimitsCpu(newIndexDb);   // write PositionWrite (+1)
+                return null;
+            }
+            //------------------------------
+            idMaxSql = modelDTBase.Id_DateTime;  // save ID to static
+
+            return modelDTBase;
+        }
+
+        // ok <<< Write id and DateTime to SQL
+        private void WriteDTSql(LoadingPLC loadPLC, Model_dateTime modelDTBase, int newIndexDb)
+        {
+            WriteDateTimeToSql(loadPLC, modelDTBase, newIndexDb);
+        }
+         
 
         private void FindMaxIdFromSql()
         {
@@ -102,7 +115,7 @@ namespace SeeAll.control
                     }
                     catch (Exception ex)
                     {
-                        logger.Error(ex.Message, "FindMaxIdFromSql() --> idMaxSql");
+                        //TODO need a logger
                         Thread.Sleep(Properties.Settings.Default.timerException);
                         statusConnSql = false;
                     }
@@ -110,7 +123,7 @@ namespace SeeAll.control
             }
         }
 
-        private void WriteDateTimeToSql(LoadCpu loadCpu, Model_dateTime modelDTBase, int newIndexDb)
+        private void WriteDateTimeToSql(LoadingPLC loadPLC, Model_dateTime modelDTBase, int newIndexDb)
         {
             using (SqlContext db = new SqlContext())
             {
@@ -126,7 +139,7 @@ namespace SeeAll.control
                         db.model_dateTime.Add(modelDTBase);
                         db.SaveChanges();
                     }
-                    loadCpu.WritePositionLimitsCpu(newIndexDb);   // write PositionRead
+                    loadPLC.WritePositionLimitsCpu(newIndexDb);   // write PositionRead
                 }
                 catch (Exception ex)
                 {
@@ -140,17 +153,17 @@ namespace SeeAll.control
                     }
                     catch (Exception ex2)
                     {
-                        logger.Error(ex2.Message, " --- WriteDateTimeToSql(Model_dateTime modelDTBase, int newIndexDb)  --> no load MAX Id");
+                        //TODO need a logger
                         statusConnSql = false;
-                    }                    
-                    logger.Error(ex.Message, " --- WriteDateTimeToSql(Model_dateTime modelDTBase, int newIndexDb)  --> no load MAX Id");                    
+                    }
+                    //TODO need a logger
                     Thread.Sleep(Properties.Settings.Default.timerException);
                     statusConnSql = false;
                 }
             }
         }
 
-        private int LocationIndexDb(LoadCpu loadCpu, LimitsCpu limitsCpu)
+        private int LocationIndexDb(LoadingPLC loadPLC, LimitsCpu limitsCpu)
         {
             // last index BD
             if (limitsCpu.PositionRead == limitsCpu.PositionMax)
@@ -171,7 +184,7 @@ namespace SeeAll.control
             // ok
             if (limitsCpu.PositionRead >= limitsCpu.PositionMin - addPositionIndex)
             {
-                if (CheckDateTimeCpu(loadCpu, limitsCpu))
+                if (CheckDateTimeCpu(loadPLC, limitsCpu))
                     return limitsCpu.PositionWrite + addPositionIndex;  // idex > Write --> new value (will Write < Read)
                 else
                     return limitsCpu.PositionRead + addPositionIndex;   // (will Write > Read)
@@ -190,12 +203,12 @@ namespace SeeAll.control
         /// false - продолжать с Read (+2)
         /// true - продолжать с Write (+2)
         /// </returns>
-        private bool CheckDateTimeCpu(LoadCpu loadCpu, LimitsCpu limitsCpu)
+        private bool CheckDateTimeCpu(LoadingPLC loadPLC, LimitsCpu limitsCpu)
         {
             //----------------------------------------------------------------
             // loading data all CPU
-            var tempDtRead = loadCpu.ReadDatetime(limitsCpu.PositionRead);
-            var tempDtWrite = loadCpu.ReadDatetime(limitsCpu.PositionWrite);
+            var tempDtRead = loadPLC.ReadDateTime(limitsCpu.PositionRead);
+            var tempDtWrite = loadPLC.ReadDateTime(limitsCpu.PositionWrite);
             if ((tempDtRead == null) || (tempDtWrite == null))
             {
                 return false;
@@ -213,7 +226,7 @@ namespace SeeAll.control
             long dtdtReadAfterWrite;
             if ((limitsCpu.PositionWrite + addPositionIndex > limitsCpu.PositionMax) || (limitsCpu.PositionWrite < limitsCpu.PositionMin))
             {
-                var tempDtdtReadAfterWrite = loadCpu.ReadDatetime(limitsCpu.PositionMin);
+                var tempDtdtReadAfterWrite = loadPLC.ReadDateTime(limitsCpu.PositionMin);
                 if (tempDtdtReadAfterWrite == null)
                 {
                     return false;
@@ -225,7 +238,7 @@ namespace SeeAll.control
             }
             else
             {
-                var tempDtdtReadAfterWrite = loadCpu.ReadDatetime(limitsCpu.PositionWrite + addPositionIndex);
+                var tempDtdtReadAfterWrite = loadPLC.ReadDateTime(limitsCpu.PositionWrite + addPositionIndex);
                 if (tempDtdtReadAfterWrite == null)
                 {
                     return false;
@@ -283,7 +296,7 @@ namespace SeeAll.control
                 }
                 catch (Exception ex)
                 {
-                    logger.Error(ex.Message, "CheckDateTimeCpu() --> DateTimWritePp=" + valueCheck);
+                    //TODO need a logger
                     return false;    
                 }
             }
@@ -308,30 +321,6 @@ namespace SeeAll.control
                 if (differenceTime >= noConnectionLimitTimeSec)
                 {
                     isNoConnectionTimeSec = true;
-                }
-            }
-        }
-
-        // TEST--------------------TEST-----------------
-        public void TESTaddToBd()
-        {
-            Model_dateTime modelDTBase = new Model_dateTime();
-            for (int i = 0; i < 10; i++)
-            {
-                Thread.Sleep(10000);
-                modelDTBase.Id_DateTime = 423432 + i;
-                modelDTBase.DateTime = DateTime.Now;
-
-                using (SqlContext db = new SqlContext())
-                {
-                    try
-                    {
-                        db.model_dateTime.Add(modelDTBase);
-                        db.SaveChanges();
-                    }
-                    catch (Exception ex)
-                    {
-                    }
                 }
             }
         }
