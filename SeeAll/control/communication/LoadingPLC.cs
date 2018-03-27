@@ -18,7 +18,7 @@ namespace SeeAll.control.communication
         public string dbwPLC { get; set; }
         public int waitingTime { get; set; }            // waiting time for open connection PLC
         public int numberAttempts { get; set; }         // number of connection attempts
-        public bool statusConnection { get; set; }   // status of connection to PLC
+        public bool statusConnection { get; set; }      // status of connection to PLC
         public bool equalityCheck { get; set; }         // equality check of write and read position PLC
 
         public LoadingPLC()
