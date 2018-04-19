@@ -83,6 +83,7 @@
     <Compile Include="control\communication\LoadingPLC.cs" />
     <Compile Include="control\WorkCpu.cs" />
     <Compile Include="control\WorkCycleTable.cs" />
+    <Compile Include="control\WorkingPLC.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
